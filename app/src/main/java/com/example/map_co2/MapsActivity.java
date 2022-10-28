@@ -213,14 +213,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             TextView num_dis = findViewById(R.id.num);
             num_dis.setText(String.format("%.3fKm",dis));
 
-            String str = num_dis.getText().toString();
+
 
             Button co2_calc = findViewById(R.id.calculator);
             co2_calc.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(),emission.class);
-                    intent.putExtra("msg_dis",str);
+                    intent.putExtra("msg_dis",dis);
                     startActivity(intent);
                 }
             });
