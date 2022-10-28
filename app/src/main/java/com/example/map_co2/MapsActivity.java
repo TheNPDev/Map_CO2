@@ -53,6 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double latitude,longitude;
     double end_latitude,end_longitude;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,14 +70,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        Button co2_calc = findViewById(R.id.calculator);
-        co2_calc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),emission.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     @Override
@@ -218,6 +212,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.addMarker(markerOptions);
             TextView num_dis = findViewById(R.id.num);
             num_dis.setText(String.format("%.3fKm",dis));
+
+            String str = num_dis.getText().toString();
+
+            Button co2_calc = findViewById(R.id.calculator);
+            co2_calc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(),emission.class);
+                    intent.putExtra("msg_dis",str);
+                    startActivity(intent);
+                }
+            });
+
 
 
         }
