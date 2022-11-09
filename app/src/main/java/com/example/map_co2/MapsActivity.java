@@ -39,9 +39,7 @@ import com.example.map_co2.databinding.ActivityMapsBinding;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener,
-        GoogleMap.OnMarkerClickListener,
-        GoogleMap.OnMarkerDragListener,GoogleMap.OnMapLongClickListener{
+        LocationListener,GoogleMap.OnMapLongClickListener{
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
@@ -240,30 +238,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    @Override
-    public boolean onMarkerClick(@NonNull Marker marker) {
 
-
-        //marker.setDraggable(true);
-        return false;
-    }
-
-    @Override
-    public void onMarkerDrag(@NonNull Marker marker) {
-
-
-    }
-    @Override
-    public void onMarkerDragStart(@NonNull Marker marker) {
-
-
-    }
-
-    @Override
-    public void onMarkerDragEnd(@NonNull Marker marker) {
-        //end_latitude = marker.getPosition().latitude;
-        //end_longitude = marker.getPosition().longitude;
-    }
 
 
     @Override
